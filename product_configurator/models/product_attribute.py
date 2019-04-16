@@ -128,7 +128,7 @@ class ProductAttribute(models.Model):
 
 
 class ProductAttributeLine(models.Model):
-    _inherit = 'product.attribute.line'
+    _inherit = 'product.template.attribute.line'
 
     @api.onchange('attribute_id')
     def onchange_attribute(self):
@@ -203,7 +203,7 @@ class ProductAttributeValue(models.Model):
         string='Related Product'
     )
     attribute_line_ids = fields.Many2many(
-        comodel_name='product.attribute.line',
+        comodel_name='product.template.attribute.line',
         string="Attribute Lines"
     )
 
